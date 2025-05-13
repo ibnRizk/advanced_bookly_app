@@ -4,6 +4,7 @@ import 'package:advanced_bookly_app/Features/home/presentation/views/domin/entit
 import 'package:advanced_bookly_app/Features/home/presentation/views/domin/repos/home_repo.dart';
 import 'package:advanced_bookly_app/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
@@ -25,7 +26,11 @@ class HomeRepoImpl extends HomeRepo {
       var books = await homeRemoteDataSource.featchFeaturedBooks();
       return right(books);
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 
@@ -40,7 +45,11 @@ class HomeRepoImpl extends HomeRepo {
       var books = await homeRemoteDataSource.featchNewestBooks();
       return right(books);
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 }
