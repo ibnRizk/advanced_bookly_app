@@ -3,7 +3,7 @@ import 'package:advanced_bookly_app/constants.dart';
 import 'package:advanced_bookly_app/core/utils/api_service.dart';
 
 import '../../../../core/functions/save_books.dart';
-import '../../presentation/views/domin/entities/book_entities.dart';
+import '../../domin/entities/book_entities.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntities>> featchFeaturedBooks();

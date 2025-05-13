@@ -1,7 +1,7 @@
 import 'package:advanced_bookly_app/constants.dart';
 import 'package:hive/hive.dart';
 
-import '../../presentation/views/domin/entities/book_entities.dart';
+import '../../domin/entities/book_entities.dart';
 
 abstract class HomeLocalDataSource {
   List<BookEntities> featchFeaturedBooks();

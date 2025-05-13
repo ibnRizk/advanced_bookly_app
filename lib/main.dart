@@ -1,4 +1,4 @@
-import 'package:advanced_bookly_app/Features/home/presentation/views/domin/entities/book_entities.dart';
+import 'package:advanced_bookly_app/Features/home/domin/entities/book_entities.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 

@@ -1,4 +1,4 @@
-import 'package:advanced_bookly_app/Features/home/presentation/views/domin/entities/book_entities.dart';
+import 'package:advanced_bookly_app/Features/home/domin/entities/book_entities.dart';
 
 import 'access_info.dart';
 import 'sale_info.dart';
